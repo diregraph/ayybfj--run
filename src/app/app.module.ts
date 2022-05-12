@@ -7,9 +7,11 @@ import {CdkDragDropConnectedSortingExample} from './cdk-drag-drop-connected-sort
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
+import { TabViewComponent } from './tab-view/tab-view.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [CdkDragDropConnectedSortingExample],
+  declarations: [CdkDragDropConnectedSortingExample, TabViewComponent, AppComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -20,6 +22,6 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [CdkDragDropConnectedSortingExample],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
