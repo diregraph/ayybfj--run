@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {MaterialExampleModule} from '../material.module';
-import {CdkDragDropConnectedSortingExample} from './cdk-drag-drop-connected-sorting-example';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
@@ -11,7 +10,7 @@ import { TabViewComponent } from './tab-view/tab-view.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [CdkDragDropConnectedSortingExample, TabViewComponent, AppComponent],
+  declarations: [AppComponent, TabViewComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
