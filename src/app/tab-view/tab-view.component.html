@@ -1,11 +1,65 @@
-<mat-tab-group>
+<h2>Solution 1</h2>
+<h4>Move to temp drag list first</h4>
+<div cdkDropListGroup>
+    <div class="example-container">
+        <div
+            cdkDropList
+            id="toMoveList"
+            [cdkDropListData]="toMove"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+        >
+            <div class="example-box" cdkDrag [cdkDragDisabled]="true">
+                Drag items here from tabs to move items between tabs
+            </div>
+            <div class="example-box" *ngFor="let item of toMove" cdkDrag>
+                {{ item }}
+            </div>
+        </div>
+    </div>
+    <mat-tab-group>
+        <mat-tab label="To do">
+            <div class="example-container">
+                <div
+                    cdkDropList
+                    id="todoList"
+                    [cdkDropListData]="todo"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)"
+                >
+                    <div class="example-box" *ngFor="let item of todo" cdkDrag>
+                        {{ item }}
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Done">
+            <div class="example-container">
+                <div
+                    cdkDropList
+                    id="doneList"
+                    [cdkDropListData]="done"
+                    class="example-list"
+                    (cdkDropListDropped)="drop($event)"
+                >
+                    <div class="example-box" *ngFor="let item of done" cdkDrag>
+                        {{ item }}
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+<h2>Solution 2 (WIP)</h2>
+<h4>Move directly between tabs</h4>
+<mat-tab-group cdkDropListGroup>
     <mat-tab label="To do">
         <div class="example-container">
             <div
                 cdkDropList
-                #todoList="cdkDropList"
+                id="todoList"
                 [cdkDropListData]="todo"
-                [cdkDropListConnectedTo]="[doneList]"
                 class="example-list"
                 (cdkDropListDropped)="drop($event)"
             >
@@ -19,9 +73,8 @@
         <div class="example-container">
             <div
                 cdkDropList
-                #doneList="cdkDropList"
+                id="doneList"
                 [cdkDropListData]="done"
-                [cdkDropListConnectedTo]="[todoList]"
                 class="example-list"
                 (cdkDropListDropped)="drop($event)"
             >
